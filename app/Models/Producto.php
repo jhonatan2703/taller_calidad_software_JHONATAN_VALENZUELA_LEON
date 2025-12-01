@@ -2,13 +2,13 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Facades\DB;
 
 class Producto extends Model
 {
     protected $table = 'producto';
+
     
-    protected $guarded = [
+    protected $fillable = [
         'tipo_producto_id',
         'nombre',
         'descripcion',
@@ -30,8 +30,4 @@ class Producto extends Model
     {
         return $this->belongsTo(TipoProducto::class, 'tipo_producto_id');
     }
-
-
-
-
-    
+}
