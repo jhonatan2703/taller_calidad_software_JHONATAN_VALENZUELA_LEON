@@ -19,8 +19,8 @@ class Producto extends Model
     ];
 
     protected $casts = [
-        'precio' => 'decimal:2',
-        'stock' => 'integer'
+        'precio' => '',
+        'stock' => ''
     ];
 
     /**

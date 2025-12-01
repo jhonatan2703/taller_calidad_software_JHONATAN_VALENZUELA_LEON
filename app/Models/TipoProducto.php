@@ -9,7 +9,7 @@ class TipoProducto extends Model
 {
     protected $table = 'tipo_producto';
     
-    protected $guarded = [
+    protected $fillable = [
         'nombre',
         'descripcion'
     ];
