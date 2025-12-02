@@ -42,5 +42,14 @@ class AuthController extends Controller
         ])->withInput();
     }
 
-   
+    /**
+     * Cerrar sesión
+     */
+    public function logout(Request $request)
+    {
+        Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+        return redirect()->route('landing');
+    }
 }
