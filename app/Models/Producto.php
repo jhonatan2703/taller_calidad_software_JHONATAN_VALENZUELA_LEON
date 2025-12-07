@@ -7,7 +7,6 @@ class Producto extends Model
 {
     protected $table = 'producto';
 
-    
     protected $fillable = [
         'tipo_producto_id',
         'nombre',
@@ -19,13 +18,10 @@ class Producto extends Model
     ];
 
     protected $casts = [
-        'precio' => '',
-        'stock' => ''
+        'precio' => 'decimal:2',
+        'stock' => 'integer',
     ];
 
-    /**
-     * Relación: Un producto pertenece a un tipo de producto
-     */
     public function tipoProducto()
     {
         return $this->belongsTo(TipoProducto::class, 'tipo_producto_id');
